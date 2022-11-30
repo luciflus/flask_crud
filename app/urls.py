@@ -1,19 +1,12 @@
 from app import app
 from . import views
 
-######student
-app.add_url_rule('/students_list', view_func=views.students_list, endpoint='students_list')
-app.add_url_rule('/student/<int:id>', view_func=views.student_detail, endpoint='student_detail')
-app.add_url_rule('/student/create', view_func=views.student_create, methods=['GET', 'POST'], endpoint='student_create')
-app.add_url_rule('/student/<int:id>/update', view_func=views.student_update, methods=['GET', 'POST'], endpoint='student_update')
-app.add_url_rule('/student/<int:id>/delete', view_func=views.student_delete, methods=['GET', 'POST'], endpoint='student_delete')
-
-#####courses
-app.add_url_rule('/courses_list', view_func=views.courses_list, endpoint='courses_list')
-app.add_url_rule('/course/<int:id>', view_func=views.course_detail, endpoint='course_detail')
-app.add_url_rule('/course/create', view_func=views.course_create, methods=['GET', 'POST'], endpoint='course_create')
-app.add_url_rule('/course/<int:id>/update', view_func=views.course_update, methods=['GET', 'POST'], endpoint='course_update')
-app.add_url_rule('/course/<int:id>/delete', view_func=views.course_delete, methods=['GET', 'POST'], endpoint='course_delete')
+######transaction
+app.add_url_rule('/transaction_list', view_func=views.transactions_list, endpoint='transactions_list')
+app.add_url_rule('/transaction/<int:id>', view_func=views.transaction_detail, endpoint='transaction_detail')
+app.add_url_rule('/transaction/create', view_func=views.transaction_create, methods=['GET', 'POST'], endpoint='transaction_create')
+app.add_url_rule('/transaction/<int:id>/update', view_func=views.transaction_update, methods=['GET', 'POST'], endpoint='transaction_update')
+app.add_url_rule('/transaction/<int:id>/delete', view_func=views.transaction_delete, methods=['GET', 'POST'], endpoint='transaction_delete')
 
 #####register
 app.add_url_rule('/register', view_func=views.register_view, methods=['GET', 'POST'], endpoint='register')

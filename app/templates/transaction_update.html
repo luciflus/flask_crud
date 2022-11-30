@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Удалить транзакцию</h1>
+
+<form method="POST">
+  <p> Вы действительно хотите обновить транзакцию?: </p>
+  <p>ID = {{ transaction.id }}</p>
+  <p>Value = {{ transaction.value }}</p>
+  <p>Subject = {{ transaction.subject }}</p>
+    <button type="submit" class="btn btn-danger">Обновить</button>
+</form>
+
+{% endblock content %}

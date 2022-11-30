@@ -7,21 +7,13 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
-class Course(db.Model):
+class Transactions(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    course_name = db.Column(db.String)
-    course_duration = db.Column(db.Integer)
-
-    def __repr__(self):
-        return self.course_name
-
-class Student(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
-    phone_number = db.Column(db.String)
-    birth_date = db.Column(db.Date)
-    course = db.relationship(Course, backref=db.backref('courses', lazy='dynamic'))
-    course_id = db.Column(db.Integer, db.ForeignKey('course.id'))
+    period = db.Column(db.String)
+    value = db.Column(db.Integer)
+    status = db.Column(db.String)
+    unit = db.Column(db.String)
+    subject = db.Column(db.String)
 
     def __repr__(self):
         return self.name

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h3>ID = {{ transactions.id }}</h3>
+<p>Period = {{ transactions.period }}</p>
+<p>Value = {{ transactions.value }}</p>
+<p>Status = {{ transactions.status }}</p>
+<p>Unit = {{ transactions.unit }}</p>
+<p>Subject = {{ transactions.subject }}</p>
+
+<p>
+    <a class="btn btn-warning" href="{{url_for('transaction_update', id=transactions.id) }}">Update</a>
+</p>
+<p>
+    <a class="btn btn-danger" href="{{url_for('transaction_delete', id=transactions.id) }}">Delete</a>
+</p>
+{% endblock content %}
